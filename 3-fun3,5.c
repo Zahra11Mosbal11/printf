@@ -10,13 +10,11 @@
 */
 char *convert(long int num, int base, int flags)
 {
-	char *array;
-	char *result = NULL;
+	static char *array;
+	static char buffer[50];
 	char sign = 0;
 	char *ptr;
 	unsigned long n = num;
-	int numDigits = 0;
-	unsigned long temp = n;
 
 	if (!(flags & CONVERT_UNSIGNED) && num < 0)
 	{
@@ -24,24 +22,16 @@ char *convert(long int num, int base, int flags)
 		sign = '-';
 	}
 	array = (flags & CONVERT_LOWERCASE) ? "0123456789abcdef" : "0123456789ABCDEF";
-	do {
-		numDigits++;
-		temp /= base;
-	} while (temp > 0);
-	result = (char *)malloc(numDigits + 2);
-	if (result == NULL)
-	{
-		return (NULL);
-	}
-	ptr = result + numDigits + 1;
+	ptr = &buffer[49];
 	*ptr = '\0';
+
 	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);
 	if (sign)
 		*--ptr = sign;
-	return (result);
+	return (ptr);
 }
 /**
 * put_u - prints unsigned integer numbers
