@@ -68,20 +68,20 @@ int _putchar(int c)
 int (*g_specifier(char *s))(va_list ap, par_t *params)
 {
 	specifier_t specifiers[] = {
-		("c", put_c),
-		("d", put_i),
-		("i", put_i),
-		("s", put_s),
-		("%", put_percent),
-		("b", put_b),
-		("o", put_o),
-		("u", put_u),
-		("x", put_x),
-		("X", put_X),
-		("p", put_p),
-		("S", put_S),
-		("r", put_r),
-		("R", put_R),
+		{"c", put_c},
+		{"d", put_i},
+		{"i", put_i},
+		{"s", put_s},
+		{"%", put_percent},
+		{"b", put_b},
+		{"o", put_o},
+		{"u", put_u},
+		{"x", put_x},
+		{"X", put_X},
+		{"p", put_p},
+		{"S", put_S},
+		{"r", put_r},
+		{"R", put_R},
 		{NULL, NULL}
 	};
 	int i = 0;

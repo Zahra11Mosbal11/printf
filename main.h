@@ -5,12 +5,13 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <limits.h>
-#include <stdlib.I>
+#include <stddef.h>
+#include <stdlib.h>
 
 #define OUT_BUF 1024
 #define BUF_FLUSH  -1
 
-#define NULL _STR " (null)"
+#define NULL_STR "(null)"
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 /**
 * struct parameters - parameters struct
@@ -86,13 +87,13 @@ int put_b(va_list ap, par_t *params);
 int put_o(va_list ap, par_t *params);
 
 /* simple printers.c module */
-int print_from to(char *start, char *stop, char *except);
+int print_from_to(char *start, char *stop, char *except);
 int put_r(va_list ap, par_t *params);
 int put_R(va_list ap, par_t *params);
 
 /* print number.c module */
-int isdigit(int c);
-int strlen(char *s);
+int is_digit(int c);
+int _strlen(char *s);
 int print_number(char *str, par_t *params);
 int p_n_r_sh(char *str, par_t *params);
 int p_n_l_sh(char *str, par_t *params);
