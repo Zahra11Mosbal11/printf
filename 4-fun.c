@@ -105,7 +105,7 @@ int p_n_r_sh(char *str, par_t *params)
 		pad_char = '0';
 	neg = neg2 = (!params->unsign && *str == '-');
 	if (neg && i < params->width && pad_char == '0' && !params->minus_f)
-		str++;
+		i++;
 	else
 		neg = 0;
 	if ((params->plus_f && !neg2) ||
