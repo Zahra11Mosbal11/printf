@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * p_n_l_sh - Print with options
  * @str: The base
@@ -40,7 +41,7 @@ int put_b(va_list ap, par_t *params)
 	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
 	int c = 0;
 
-	if (params->hash_f && n)
+	if (params->hashtag_f && n)
 		*--str = '0';
 	params->unsign = 1;
 	return (c += print_number(str, params));
@@ -67,7 +68,7 @@ int put_X(va_list ap, par_t *params)
 		l = (unsigned int)va_arg(ap, unsigned int);
 
 	str = convert(l, 16, CONVERT_UNSIGNED, params);
-	if (params->hash_f && l)
+	if (params->hashtag_f && l)
 	{
 		*--str = 'X';
 		*--str = '0';
@@ -97,7 +98,7 @@ int put_x(va_list ap, par_t *params)
 	l = (unsigned int)va_arg(ap, unsigned int);
 
 	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
-	if (params->hash_f && l)
+	if (params->hashtag_f && l)
 	{
 		*--str = 'x';
 		*--str = '0';
@@ -127,7 +128,7 @@ int put_o(va_list ap, par_t *params)
 		l = (unsigned int)va_arg(ap, unsigned int);
 
 	str = convert(l, 8, CONVERT_UNSIGNED, params);
-	if (params->hash_f && l)
+	if (params->hashtag_f && l)
 		*--str = '0';
 	params->unsign = 1;
 	return (c += print_number(str, params));

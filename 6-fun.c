@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * put_percent - print percent
  * @ap: list
@@ -19,7 +20,7 @@ int put_percent(va_list ap, par_t *params)
  * Return: sum
  */
 
-int put_int(va_list ap, par_t *params)
+int put_i(va_list ap, par_t *params)
 {
 	long l;
 
@@ -62,13 +63,16 @@ int put_c(va_list ap, par_t *params)
 
 int put_s(va_list ap, par_t *params)
 {
-	char *str = va_arg(ap, char *), pad_char = ' ';
-	unsigned int pad = 0, sum = 0, i = 0, j;
+	char *str = va_arg(ap, char *);
+	char pad_char = ' ';
+	unsigned int pad = 0;
+       	unsigned int sum = 0;
+	unsigned int i , j;
 
 	(void)params;
 	switch ((int)(!str))
-		case 1;
-		str = NULL_STRING;
+		case 1:
+			str = NULL_STR;
 
 	j = pad = _strlen(str);
 	if (params->prec < pad)
@@ -76,7 +80,7 @@ int put_s(va_list ap, par_t *params)
 
 	if (params->minus_f)
 	{
-		if (params->prec != UNIT_MAX)
+		if (params->prec != UINT_MAX)
 			for (i = 0; i < pad; i++)
 				sum += _putchar(*str);
 		else
@@ -99,10 +103,10 @@ int put_S(va_list ap, par_t *params)
 	int sum = 0;
 
 	if ((int)(!str))
-		return (_puts(NULL_STRING));
+		return (_puts(NULL_STR));
 	for (; *str; str++)
 	{
-		if ((*str > 0 && str < 32) || str >= 127)
+		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
 			sum += _putchar('\\');
 			sum += _putchar('x');
