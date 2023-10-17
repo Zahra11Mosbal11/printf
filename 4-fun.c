@@ -1,3 +1,4 @@
+#include "main.h"
 
 /**
  * put_p - Prints address
@@ -9,7 +10,7 @@
 
 int put_p(va_list ap, par_t *params)
 {
-	unsigned long int n = va_arg(ap, *unsigned long int);
+	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;
 
 	if (!n)
@@ -30,7 +31,7 @@ int put_p(va_list ap, par_t *params)
  * Return: 0 when false, 1 when true
  */
 
-int isdigit(int c)
+int is_digit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
@@ -75,7 +76,7 @@ int print_number(char *str, par_t *params)
 		str++;
 		i--;
 	}
-	if (params->prec != UNIT_MAX)
+	if (params->prec != UINT_MAX)
 	{
 		while (i++ < params->prec)
 			*--str = '0';
@@ -95,7 +96,7 @@ int print_number(char *str, par_t *params)
  * Return: int
  */
 
-int p_n_r_sh(char *str, params_t *params)
+int p_n_r_sh(char *str, par_t *params)
 {
 	unsigned int n = 0, neg, neg2, i = _strlen(str);
 	char pad_char = ' ';
@@ -117,7 +118,7 @@ int p_n_r_sh(char *str, params_t *params)
 		!params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_f && !neg2 && params->space_f &&
-		!params->unsing && params->zero_f)
+		!params->unsign && params->zero_f)
 		n += _putchar(' ');
 	while (i++ < params->width)
 		n += _putchar(pad_char);
