@@ -73,7 +73,7 @@ int put_percent(va_list ap, par_t *params);
 int put_S(va_list ap, par_t *params);
 
 /* number.c module */
-char *convert(long int num, int base, int flags, par_t *params);
+char *convert(long int num, int base, int flags);
 int put_u(va_list ap, par_t *params);
 int put_p(va_list ap, par_t *params);
 

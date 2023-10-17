@@ -1,8 +1,4 @@
 #include "main.h"
-<<<<<<< HEAD
-=======
-
->>>>>>> 344e2960bf24082b24973de8cd4a38ea1ef6c328
 /**
  * p_n_l_sh - Print with options
  * @str: The base
@@ -42,7 +38,7 @@ int p_n_l_sh(char *str, par_t *params)
 int put_b(va_list ap, par_t *params)
 {
 	unsigned int n = va_arg(ap, unsigned int);
-	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
+	char *str = convert(n, 2, CONVERT_UNSIGNED);
 	int c = 0;
 
 	if (params->hashtag_f && n)
@@ -71,7 +67,7 @@ int put_X(va_list ap, par_t *params)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 
-	str = convert(l, 16, CONVERT_UNSIGNED, params);
+	str = convert(l, 16, CONVERT_UNSIGNED);
 	if (params->hashtag_f && l)
 	{
 		*--str = 'X';
@@ -101,7 +97,7 @@ int put_x(va_list ap, par_t *params)
 	else
 	l = (unsigned int)va_arg(ap, unsigned int);
 
-	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE);
 	if (params->hashtag_f && l)
 	{
 		*--str = 'x';
@@ -131,7 +127,7 @@ int put_o(va_list ap, par_t *params)
 	else
 		l = (unsigned int)va_arg(ap, unsigned int);
 
-	str = convert(l, 8, CONVERT_UNSIGNED, params);
+	str = convert(l, 8, CONVERT_UNSIGNED);
 	if (params->hashtag_f && l)
 		*--str = '0';
 	params->unsign = 1;

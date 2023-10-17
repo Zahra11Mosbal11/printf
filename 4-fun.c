@@ -1,8 +1,4 @@
 #include "main.h"
-<<<<<<< HEAD
-=======
-
->>>>>>> 344e2960bf24082b24973de8cd4a38ea1ef6c328
 /**
  * put_p - Prints address
  * @ap: Argument
@@ -21,7 +17,7 @@ int put_p(va_list ap, par_t *params)
 
 	else
 	{
-		str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+		str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE);
 		*--str = 'x';
 		*--str = '0';
 	}
