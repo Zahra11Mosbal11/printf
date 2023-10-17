@@ -96,7 +96,7 @@ int put_r(va_list ap, par_t *params);
 int put_R(va_list ap, par_t *params);
 
 /* print number.c module */
-int is_digit(int c);
+int _isdigit(int c);
 int _strlen(char *s);
 int print_number(char *str, par_t *params);
 int p_n_r_sh(char *str, par_t *params);

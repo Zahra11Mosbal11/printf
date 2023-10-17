@@ -43,7 +43,7 @@ char *g_width(char *s, par_t *params, va_list ap)
 	}
 	else
 	{
-		while (is_digit(*s))
+		while (_isdigit(*s))
 
 			d = d * 10 + (*s++ - '0');
 	}
@@ -74,7 +74,7 @@ char *g_prec(char *p, par_t *params, va_list ap)
 	}
 	else
 	{
-		while (is_digit(*p))
+		while (_isdigit(*p))
 
 			d = d * 10 + (*p++ - '0');
 	}

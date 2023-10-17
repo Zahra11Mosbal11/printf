@@ -15,12 +15,9 @@ int put_p(va_list ap, par_t *params)
 	if (!n)
 		return (_puts("(nil)"));
 
-	else
-	{
-		str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE);
-		*--str = 'x';
-		*--str = '0';
-	}
+	str = convert(n, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE);
+	*--str = 'x';
+	*--str = '0';
 	return (print_number(str, params));
 }
 
@@ -30,12 +27,9 @@ int put_p(va_list ap, par_t *params)
  * Return: 0 when false, 1 when true
  */
 
-int is_digit(int c)
+int _isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	return (c >= '0' && c <= '9');
 }
 
 /**
@@ -101,13 +95,12 @@ int p_n_r_sh(char *str, par_t *params)
 		pad_char = '0';
 	neg = neg2 = (!params->unsign && *str == '-');
 	if (neg && i < params->width && pad_char == '0' && !params->minus_f)
-		i++;
+		str++;
 	else
 		neg = 0;
 	if ((params->plus_f && !neg2) ||
 		(!params->plus_f && params->space_f && !neg2))
 		i++;
-
 	if (neg && pad_char == '0')
 		n += _putchar('-');
 	if (params->plus_f && !neg2 && pad_char == '0' &&

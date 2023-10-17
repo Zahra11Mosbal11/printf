@@ -22,7 +22,7 @@ int p_n_l_sh(char *str, par_t *params)
 		n += _putchar('+'), i++;
 	else if (params->space_f && !neg2 && !params->unsign)
 		n += _putchar(' '), i++;
-	n += puts(str);
+	n += _puts(str);
 	while (i++ < params->width)
 		n += _putchar(pad_char);
 	return (n);
