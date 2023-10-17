@@ -40,7 +40,7 @@ int put_r(va_list ap, par_t *params)
 {
 	int len, sum = 0;
 	char *str = va_arg(ap, char *);
-	(void) params;
+	(void)params;
 
 	if (str)
 	{
@@ -63,7 +63,7 @@ int put_R(va_list ap, par_t *params)
 {
 	int i, index;
 	int count = 0;
-	char arr[] = "NOPORSTUVWXYZABCDEFGHIJKIM	nopqrstuvwxyzabcdefghijkim";
+	char arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLM	nopqrstuvwxyzabcdefghijklm";
 	char *a = va_arg(ap, char *);
 
 	(void)params;
