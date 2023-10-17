@@ -49,11 +49,8 @@ int _strlen(char *s)
 {
 	int i = 0;
 
-	do {
+	while (*s++)
 		i++;
-		s++;
-	} while (*s != '\0');
-
 	return (i);
 }
 
