@@ -1,4 +1,8 @@
 #include "main.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 344e2960bf24082b24973de8cd4a38ea1ef6c328
 /**
  * p_n_l_sh - Print with options
  * @str: The base

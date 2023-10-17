@@ -1,4 +1,8 @@
 #include "main.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 344e2960bf24082b24973de8cd4a38ea1ef6c328
 /**
  * put_p - Prints address
  * @ap: Argument
@@ -48,11 +52,8 @@ int _strlen(char *s)
 {
 	int i = 0;
 
-	do {
+	while (*s++)
 		i++;
-		s++;
-	} while (*s != '\0');
-
 	return (i);
 }
 
@@ -104,7 +105,7 @@ int p_n_r_sh(char *str, par_t *params)
 		pad_char = '0';
 	neg = neg2 = (!params->unsign && *str == '-');
 	if (neg && i < params->width && pad_char == '0' && !params->minus_f)
-		str++;
+		i++;
 	else
 		neg = 0;
 	if ((params->plus_f && !neg2) ||
@@ -117,7 +118,7 @@ int p_n_r_sh(char *str, par_t *params)
 		!params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_f && !neg2 && params->space_f &&
-		!params->unsing && params->zero_f)
+		!params->unsign && params->zero_f)
 		n += _putchar(' ');
 	while (i++ < params->width)
 		n += _putchar(pad_char);

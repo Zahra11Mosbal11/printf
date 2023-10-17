@@ -1,4 +1,8 @@
 #include "main.h"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 344e2960bf24082b24973de8cd4a38ea1ef6c328
 /**
  * put_percent - print percent
  * @ap: list
@@ -82,7 +86,17 @@ int put_s(va_list ap, par_t *params)
 	{
 		if (params->prec != UINT_MAX)
 			for (i = 0; i < pad; i++)
-				sum += _putchar(*str);
+				sum += _putchar(*str++);
+		else
+			sum += _puts(str);
+	}
+	while (j++ > params->width)
+		sum += _putchar(pad_char);
+	if (!params->minus_f)
+	{
+		if (params->prec != UINT_MAX)
+			for (i = 0; i < pad; i++)
+				sum += _putchar(*str++);
 		else
 			sum += _puts(str);
 	}
