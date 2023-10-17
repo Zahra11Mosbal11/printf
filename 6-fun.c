@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * put_percent - print percent
  * @ap: list
@@ -31,7 +30,7 @@ int put_i(va_list ap, par_t *params)
 		l = (short int)va_arg(ap, int);
 	else
 		l = (int)va_arg(ap, int);
-	return (print_number(convert(l, 10, 0, params), params));
+	return (print_number(convert(l, 10, 0), params));
 }
 
 /**
@@ -64,8 +63,11 @@ int put_c(va_list ap, par_t *params)
 
 int put_s(va_list ap, par_t *params)
 {
-	char *str = va_arg(ap, char *), pad_char = ' ';
-	unsigned int pad = 0, sum = 0, i = 0, j;
+	char *str = va_arg(ap, char *);
+	char pad_char = ' ';
+	unsigned int pad = 0;
+       	unsigned int sum = 0;
+	unsigned int i , j;
 
 	(void)params;
 	switch ((int)(!str))
@@ -110,6 +112,8 @@ int put_S(va_list ap, par_t *params)
 	char *hex;
 	int sum = 0;
 
+	(void) params;
+
 	if ((int)(!str))
 		return (_puts(NULL_STR));
 	for (; *str; str++)
@@ -118,7 +122,7 @@ int put_S(va_list ap, par_t *params)
 		{
 			sum += _putchar('\\');
 			sum += _putchar('x');
-			hex = convert(*str, 16, 0, params);
+			hex = convert(*str, 16, 0);
 			if (!hex[1])
 				sum += _putchar('0');
 			sum += _puts(hex);
