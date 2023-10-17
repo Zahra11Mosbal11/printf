@@ -48,7 +48,7 @@ int put_c(va_list ap, par_t *params)
 		sum += _putchar(ch);
 	while (pad++ < params->width)
 		sum += _putchar(pad_char);
-	if(!params->minus_f)
+	if (!params->minus_f)
 		sum += _putchar(ch);
 	return (sum);
 }
@@ -56,7 +56,7 @@ int put_c(va_list ap, par_t *params)
 /**
  * put_s - put string
  * @ap: list
- * @params
+ * @params: pala
  * Return: something
  */
 
@@ -86,7 +86,7 @@ int put_s(va_list ap, par_t *params)
 }
 
 /**
- * puts_S - put s
+ * put_S - puts string in a way
  * @ap: list
  * @params: parametrs
  * Return: sum

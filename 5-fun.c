@@ -47,7 +47,7 @@ int put_b(va_list ap, par_t *params)
 }
 
 /**
- * put_o - print octal
+ * put_X - print octal
  * @ap: list
  * @params: par
  * Return: some
@@ -77,7 +77,7 @@ int put_X(va_list ap, par_t *params)
 }
 
 /**
- * put_o - print octal
+ * put_x - print octal
  * @ap: list
  * @params: par
  * Return: some
@@ -86,20 +86,20 @@ int put_X(va_list ap, par_t *params)
 int put_x(va_list ap, par_t *params)
 {
 	unsigned long l;
-        int c = 0;
-        char *str;
+	int c = 0;
+	char *str;
 
-        if (params->l_mod)
-                l = (unsigned long)va_arg(ap, unsigned long);
-        else if (params->h_mod)
-                l = (unsigned short int)va_arg(ap, unsigned int);
-        else
-                l = (unsigned int)va_arg(ap, unsigned int);
+	if (params->l_mod)
+		l = (unsigned long)va_arg(ap, unsigned long);
+	else if (params->h_mod)
+		l = (unsigned short int)va_arg(ap, unsigned int);
+	else
+	l = (unsigned int)va_arg(ap, unsigned int);
 
-        str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
-        if (params->hash_f && l)
-        {
-                *--str = 'x';
+	str = convert(l, 16, CONVERT_UNSIGNED | CONVERT_LOWERCASE, params);
+	if (params->hash_f && l)
+	{
+		*--str = 'x';
 		*--str = '0';
 	}
 	params->unsign = 1;

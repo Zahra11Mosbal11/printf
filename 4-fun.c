@@ -107,9 +107,9 @@ int p_n_r_sh(char *str, params_t *params)
 		str++;
 	else
 		neg = 0;
-	if ((params->plus_f && !neg2) || (!params->plus_f &&
-		params->space_f && !neg2))
-			i++;
+	if ((params->plus_f && !neg2) ||
+		(!params->plus_f && params->space_f && !neg2))
+		i++;
 
 	if (neg && pad_char == '0')
 		n += _putchar('-');
