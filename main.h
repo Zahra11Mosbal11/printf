@@ -18,7 +18,7 @@ typedef struct format
 	char *id;
 	int (*f)();
 } match;
-
+int print_ather(int cont, char str);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_char(va_list val);

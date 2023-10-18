@@ -32,8 +32,7 @@ int _printf(const char *format, ...)
 						cont++;
 						break;
 					default:
-						_putchar(format[i]);
-						cont++;
+						cont += print_ather(cont, format[i]);
 						break;
 				}
 			}
