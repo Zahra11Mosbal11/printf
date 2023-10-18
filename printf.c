@@ -31,6 +31,12 @@ int _printf(const char *format, ...)
 						print_37();
 						cont++;
 						break;
+					case 'i':
+						cont += print_int(args);
+						break;
+					case 'd':
+						cont += put_d(args);
+						break;
 					default:
 						print_ather(format[i]);
 						cont += 2;
