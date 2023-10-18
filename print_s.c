@@ -38,7 +38,8 @@ int _strlen(char *str)
 	int i;
 
 	for (i = 0; str[i] != 0; i++)
-		return (1);
+		;	
+	return (1);
 }
 /**
  * _strlenc - Entry point
@@ -50,7 +51,8 @@ int _strlenc(const char *str)
 	int i;
 
 	for (i = 0; str[i] != 0; i++)
-		return (1);
+		;
+	return (1);
 }
 
 
