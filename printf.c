@@ -6,33 +6,44 @@
 */
 int _printf(const char *format, ...)
 {
-	match m[] = {
-		{"%c", print_char}, {"%s", printf_string}, {"%%", print_37}};
 	va_list args;
-	int i = 0, len = 0;
-	int j;
+	int i = 0;
+	int cont;
 
 	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
-Here:
-	while (format[i] != '\0')
-	{
-		j = 13;
-		while (j >= 0)
+
+		while (format && format[i])
 		{
-			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
+			if (format[i] == '%')
 			{
-				len = len + m[j].f(args);
-				i = i + 2;
-				goto Here;
+				i++;
+				switch (format[i])
+				{
+					case 'c':
+						print_char(args);
+						cont++;
+						break;
+					case 's':
+						printf_string(args);
+						cont++;
+						break;
+					case '%':
+						print_37();
+						cont++;
+						break;
+					default:
+						_putchar(format[i]);
+						cont++;
+						break;
+				}
 			}
-			j--;
+			else
+			{
+				_putchar(format[i]);
+				cont++;
+			}
+			i++;
 		}
-		_putchar(format[i]);
-		i++;
-		len++;
-	}
 	va_end(args);
-	return (len);
+	return (cont);
 }

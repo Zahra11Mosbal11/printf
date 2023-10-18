@@ -31,7 +31,7 @@ int printf_string(va_list val)
 /**
  * _strlen - Entry point
  * @str: the string
- * Return: 1
+ * Return: i
  */
 int _strlen(char *str)
 {
@@ -39,12 +39,12 @@ int _strlen(char *str)
 
 	for (i = 0; str[i] != 0; i++)
 		;	
-	return (1);
+	return (i);
 }
 /**
  * _strlenc - Entry point
  * @str: the string
- * Return: 1
+ * Return: i
  */
 int _strlenc(const char *str)
 {
@@ -52,7 +52,7 @@ int _strlenc(const char *str)
 
 	for (i = 0; str[i] != 0; i++)
 		;
-	return (1);
+	return (i);
 }
 
 
