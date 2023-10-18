@@ -7,13 +7,14 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0;
-	int cont = 0;
+	int cont = 0, i = 0;
+	char buffer[BUFFER_SIZE];
 
 	va_start(args, format);
-
 		while (format && format[i])
 		{
+			if (cont >= BUFFER_SIZE)
+				flush_buffer(buffer, &cont);
 			if (format[i] == '%')
 			{
 				i++;
@@ -38,11 +39,11 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar(format[i]);
-				cont++;
+				buffer[cont++] = format[i];
 			}
 			i++;
 		}
+	flush_buffer(buffer, &cont);
 	va_end(args);
 	return (cont);
 }
