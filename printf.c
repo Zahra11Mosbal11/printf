@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 						cont++;
 						break;
 					case 's':
-						printf_string(args);
-						cont++;
+						cont += printf_string(args);
 						break;
 					case '%':
 						print_37();
