@@ -8,8 +8,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#define BUFFER_SIZE 1024
-
 /**
 * struct format - struct token
 * @id: format token
@@ -20,8 +18,6 @@ typedef struct format
 	char *id;
 	int (*f)();
 } match;
-
-void flush_buffer(char *buffer, int *length);
 void print_ather(char str);
 int _putchar(char c);
 int _printf(const char *format, ...);
