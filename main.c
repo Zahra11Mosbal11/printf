@@ -10,17 +10,15 @@
 int main(void)
 {
 int len, len2;
-char *str = "When you invoke GCC , it normally does preprocessing, compilation, assembls not the default.\n";
+len = _printf("%d", -1024);
+	len2 = printf("%d", -1024);
 
-	len = _printf("man gcc:\n%s", str);
-	len2 = printf("man gcc:\n%s", str);
-	fflush(stdout);
+fflush(stdout);
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");
 		fflush(stdout);
 		return (1);
 	}
-	_printf("%d, l, %i,\n", -762534, len);
 	return (0); 
 }

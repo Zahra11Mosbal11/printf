@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_di - integers
- * @arg: args
+ * print_int - integers
+ * @args: args
  * Return: num of printed char
  */
 
